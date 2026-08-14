@@ -1,8 +1,16 @@
-# Mi Salud Metabolica - Version PWA en libras
+# Mi Salud Metabolica - Version PWA en libras con respaldo visible
 
-Esta version registra el peso y el peso objetivo en **libras (lb)**.
+Esta version registra el peso en libras y ahora muestra los botones de respaldo directamente en el Dashboard.
+
+## Botones visibles
+
+- Descargar respaldo completo JSON: guarda perfil + historial.
+- Descargar historial CSV: archivo para Excel.
+- Subir / restaurar JSON: permite cargar el respaldo en otro dispositivo.
 
 ## Archivos a subir a GitHub Pages
+
+Reemplaza los archivos anteriores por estos 5:
 
 - index.html
 - app.js
@@ -10,16 +18,4 @@ Esta version registra el peso y el peso objetivo en **libras (lb)**.
 - sw.js
 - README_NELSON.md
 
-## Cambios de esta version
-
-- Peso diario en libras.
-- Peso objetivo en libras.
-- Dashboard muestra libras.
-- Grafico de peso muestra libras.
-- Historial muestra peso en lb y tambien kg calculado.
-- Exportacion CSV incluye weightLb y weightKg.
-- El IMC se calcula internamente convirtiendo lb a kg con la altura en cm.
-
-## Como actualizar GitHub Pages
-
-Sube estos archivos reemplazando los anteriores en tu repositorio de GitHub Pages y espera unos minutos.
+Despues espera de 1 a 5 minutos y abre de nuevo el enlace de GitHub Pages.
