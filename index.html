@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0ea5e9" />
   <link rel="manifest" href="manifest.webmanifest" />
-  <title>Mi Salud Metabólica</title>
+  <title>Mi Salud Metabolica</title>
   <style>
     :root{--bg:#f8fafc;--card:#fff;--text:#0f172a;--muted:#64748b;--blue:#0ea5e9;--green:#10b981;--red:#ef4444;--amber:#f59e0b;--border:#e2e8f0}
     *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(135deg,#f8fafc,#e0f2fe);color:var(--text)}
@@ -14,42 +14,45 @@
     .card{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:16px;box-shadow:0 8px 25px #0f172a0d;margin-bottom:14px}.grid{display:grid;gap:12px}.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
     @media(max-width:800px){.g4,.g3,.g2{grid-template-columns:1fr}.tabs{grid-template-columns:repeat(2,1fr)}}
     label{display:block;font-weight:700;font-size:13px;margin:8px 0 5px} input,select,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:14px;font-size:16px;background:#fff} textarea{min-height:80px}
-    button{border:0;border-radius:16px;padding:12px 14px;font-weight:800;background:var(--blue);color:white;cursor:pointer;font-size:15px}button.secondary{background:#e2e8f0;color:#0f172a}button.danger{background:#ef4444}.tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:14px 0}.tab{background:#e0f2fe;color:#075985}.tab.active{background:var(--blue);color:#fff}.metric{font-size:30px;font-weight:900}.muted{color:var(--muted)}.pill{display:inline-block;border-radius:999px;padding:5px 10px;background:#e0f2fe;color:#075985;font-weight:800;font-size:12px}.hidden{display:none!important}
-    table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:9px;border-bottom:1px solid var(--border);text-align:left;white-space:nowrap}.scroll{overflow:auto}.rec{background:#ecfeff;border:1px solid #bae6fd;border-radius:16px;padding:10px;margin:8px 0}.warn{background:#fffbeb;border:1px solid #fde68a;border-radius:16px;padding:12px}.ok{background:#ecfdf5;border:1px solid #a7f3d0;border-radius:16px;padding:12px}.chartBox{height:310px}.footer{font-size:12px;color:var(--muted);padding:30px 0;text-align:center}
+    button{border:0;border-radius:16px;padding:12px 14px;font-weight:800;background:var(--blue);color:white;cursor:pointer;font-size:15px}button.secondary{background:#e2e8f0;color:#0f172a}button.danger{background:#ef4444}.tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:14px 0}.tab{background:#e0f2fe;color:#075985}.tab.active{background:var(--blue);color:#fff}.metric{font-size:30px;font-weight:900}.muted{color:var(--muted)}.hidden{display:none!important}
+    table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:9px;border-bottom:1px solid var(--border);text-align:left;white-space:nowrap}.scroll{overflow:auto}.rec{background:#ecfeff;border:1px solid #bae6fd;border-radius:16px;padding:10px;margin:8px 0}.warn{background:#fffbeb;border:1px solid #fde68a;border-radius:16px;padding:12px}.chartBox{height:310px}.footer{font-size:12px;color:var(--muted);padding:30px 0;text-align:center}
   </style>
 </head>
 <body>
-<header><div class="wrap"><h1>Mi Salud Metabólica</h1><div class="sub">Omron HB514 | Historial, gráficos, recomendaciones y respaldo</div></div></header>
+<header><div class="wrap"><h1>Mi Salud Metabolica</h1><div class="sub">Omron HB514 | Peso en libras | Historial, graficos, recomendaciones y respaldo</div></div></header>
 <main class="wrap">
   <section id="onboarding" class="hidden">
-    <div class="card"><h2>Crear usuario</h2><p class="muted">La app pedirá estos datos solo la primera vez. Cada teléfono tendrá su propio usuario y su propio historial.</p>
+    <div class="card"><h2>Crear usuario</h2><p class="muted">La app pedira estos datos solo la primera vez. Cada telefono tendra su propio usuario y su propio historial. El peso se registra en libras.</p>
       <div class="grid g2">
         <div><label>Nombre</label><input id="pName" placeholder="Ej. Nelson" /></div>
         <div><label>Fecha de nacimiento</label><input id="pBirth" type="date" /></div>
         <div><label>Sexo</label><select id="pSex"><option value="masculino">Masculino</option><option value="femenino">Femenino</option></select></div>
         <div><label>Altura en cm</label><input id="pHeight" type="number" inputmode="decimal" /></div>
-        <div><label>Peso objetivo kg</label><input id="pTarget" type="number" inputmode="decimal" /></div>
-        <div><label>Actividad física</label><select id="pActivity"><option value="bajo">Bajo</option><option value="moderado" selected>Moderado</option><option value="alto">Alto</option></select></div>
-        <div><label>Objetivo principal</label><select id="pGoal"><option value="perder_grasa">Perder grasa</option><option value="ganar_musculo">Ganar músculo</option><option value="recomposicion" selected>Recomposición corporal</option><option value="salud_general">Salud general</option><option value="mantener">Mantener peso</option></select></div>
+        <div><label>Peso objetivo lb</label><input id="pTargetLb" type="number" inputmode="decimal" /></div>
+        <div><label>Actividad fisica</label><select id="pActivity"><option value="bajo">Bajo</option><option value="moderado" selected>Moderado</option><option value="alto">Alto</option></select></div>
+        <div><label>Objetivo principal</label><select id="pGoal"><option value="perder_grasa">Perder grasa</option><option value="ganar_musculo">Ganar musculo</option><option value="recomposicion" selected>Recomposicion corporal</option><option value="salud_general">Salud general</option><option value="mantener">Mantener peso</option></select></div>
         <div><label>Cintura cm opcional</label><input id="pWaist" type="number" inputmode="decimal" /></div>
       </div>
-      <h3>Primera medición opcional</h3><p class="muted">Puedes dejarla vacía y registrar después.</p>
-      <div class="grid g4"><div><label>Fecha</label><input id="iDate" type="date" value=""></div><div><label>Peso kg</label><input id="iWeight" type="number" ></div><div><label>% grasa corporal</label><input id="iFat" type="number" ></div><div><label>% músculo esquelético</label><input id="iMuscle" type="number" ></div><div><label>IMC</label><input id="iBmi" type="number" ></div><div><label>Grasa visceral</label><input id="iVisceral" type="number" ></div><div><label>Metabolismo basal kcal</label><input id="iBasal" type="number" ></div><div><label>Edad corporal</label><input id="iBodyAge" type="number" ></div></div>
+      <h3>Primera medicion opcional</h3><p class="muted">Puedes dejarla vacia y registrar despues.</p>
+      <div class="grid g4"><div><label>Fecha</label><input id="iDate" type="date" inputmode="decimal"></div><div><label>Peso lb</label><input id="iWeightLb" type="number" inputmode="decimal"></div><div><label>% grasa corporal</label><input id="iFat" type="number" inputmode="decimal"></div><div><label>% musculo esqueletico</label><input id="iMuscle" type="number" inputmode="decimal"></div><div><label>IMC opcional</label><input id="iBmi" type="number" inputmode="decimal"></div><div><label>Grasa visceral</label><input id="iVisceral" type="number" inputmode="decimal"></div><div><label>Metabolismo basal kcal</label><input id="iBasal" type="number" inputmode="decimal"></div><div><label>Edad corporal</label><input id="iBodyAge" type="number" inputmode="decimal"></div></div>
       <br><button onclick="saveProfile()">Crear perfil y empezar</button>
     </div>
   </section>
 
   <section id="app" class="hidden">
-    <div class="tabs">
-      <button class="tab active" onclick="showTab('dashboard',this)">Dashboard</button><button class="tab" onclick="showTab('registro',this)">Registrar</button><button class="tab" onclick="showTab('historial',this)">Historial</button><button class="tab" onclick="showTab('perfil',this)">Perfil</button><button class="tab" onclick="showTab('respaldo',this)">Respaldo</button>
-    </div>
+    <div class="tabs"><button class="tab active" onclick="showTab('dashboard',this)">Dashboard</button><button class="tab" onclick="showTab('registro',this)">Registrar</button><button class="tab" onclick="showTab('historial',this)">Historial</button><button class="tab" onclick="showTab('perfil',this)">Perfil</button><button class="tab" onclick="showTab('respaldo',this)">Respaldo</button></div>
     <section id="dashboard" class="tabpage"></section>
-    <section id="registro" class="tabpage hidden"><div class="card"><h2>Nueva medición diaria</h2><div class="grid g4"><div><label>Fecha</label><input id="mDate" type="date" inputmode="decimal"></div><div><label>Peso kg</label><input id="mWeight" type="number" inputmode="decimal"></div><div><label>% grasa corporal</label><input id="mFat" type="number" inputmode="decimal"></div><div><label>% músculo esquelético</label><input id="mMuscle" type="number" inputmode="decimal"></div><div><label>IMC</label><input id="mBmi" type="number" inputmode="decimal"></div><div><label>Grasa visceral</label><input id="mVisceral" type="number" inputmode="decimal"></div><div><label>Metabolismo basal kcal</label><input id="mBasal" type="number" inputmode="decimal"></div><div><label>Edad corporal</label><input id="mBodyAge" type="number" inputmode="decimal"></div><div><label>Horas sueño</label><input id="mSleep" type="number" inputmode="decimal"></div><div><label>Presión sistólica</label><input id="mSys" type="number"></div><div><label>Presión diastólica</label><input id="mDia" type="number"></div><div><label>Glucosa</label><input id="mGlucose" type="number" inputmode="decimal"></div></div><label>Notas</label><textarea id="mNotes" placeholder="Ej. Entrené fuerza, dormí mal, viaje, etc."></textarea><br><br><button onclick="saveMeasurement()">Guardar medición</button></div></section>
-    <section id="historial" class="tabpage hidden"><div class="card"><h2>Historial</h2><div class="scroll"><table><thead><tr><th>Fecha</th><th>Peso</th><th>Grasa %</th><th>Músculo %</th><th>IMC</th><th>Visceral</th><th>Basal</th><th>Edad corporal</th><th></th></tr></thead><tbody id="historyBody"></tbody></table></div></div></section>
+    <section id="registro" class="tabpage hidden"><div class="card"><h2>Nueva medicion diaria</h2><p class="muted">Ingrese el peso en libras tal como lo usa normalmente.</p><div class="grid g4"><div><label>Fecha</label><input id="mDate" type="date" inputmode="decimal"></div><div><label>Peso lb</label><input id="mWeightLb" type="number" inputmode="decimal"></div><div><label>% grasa corporal</label><input id="mFat" type="number" inputmode="decimal"></div><div><label>% musculo esqueletico</label><input id="mMuscle" type="number" inputmode="decimal"></div><div><label>IMC opcional</label><input id="mBmi" type="number" inputmode="decimal"></div><div><label>Grasa visceral</label><input id="mVisceral" type="number" inputmode="decimal"></div><div><label>Metabolismo basal kcal</label><input id="mBasal" type="number" inputmode="decimal"></div><div><label>Edad corporal</label><input id="mBodyAge" type="number" inputmode="decimal"></div>
+<div><label>Horas sueno</label><input id="mSleep" type="number" inputmode="decimal"></div>
+<div><label>Presion sistolica</label><input id="mSys" type="number"></div>
+<div><label>Presion diastolica</label><input id="mDia" type="number"></div>
+<div><label>Glucosa</label><input id="mGlucose" type="number" inputmode="decimal"></div>
+</div><label>Notas</label><textarea id="mNotes" placeholder="Ej. Entrene fuerza, dormi mal, viaje, etc."></textarea><br><br><button onclick="saveMeasurement()">Guardar medicion</button></div></section>
+    <section id="historial" class="tabpage hidden"><div class="card"><h2>Historial</h2><div class="scroll"><table><thead><tr><th>Fecha</th><th>Peso lb</th><th>Peso kg</th><th>Grasa %</th><th>Musculo %</th><th>IMC</th><th>Visceral</th><th>Basal</th><th>Edad corporal</th><th></th></tr></thead><tbody id="historyBody"></tbody></table></div></div></section>
     <section id="perfil" class="tabpage hidden"><div class="card"><h2>Editar perfil</h2><div id="profileEdit"></div><button onclick="updateProfile()">Guardar cambios</button></div></section>
-    <section id="respaldo" class="tabpage hidden"><div class="card"><h2>Respaldo y restauración</h2><p>Use JSON para respaldo completo y CSV para abrir en Excel.</p><div class="grid g3"><button onclick="exportJSON()">Descargar JSON</button><button onclick="exportCSV()" class="secondary">Descargar CSV</button><label><input type="file" id="importFile" accept="application/json" onchange="importJSON(event)" class="hidden"><button onclick="document.getElementById('importFile').click()" type="button">Importar JSON</button></label></div><br><div class="warn">Privacidad: los datos se guardan localmente en este teléfono. No se envían a servidores.</div></div></section>
+    <section id="respaldo" class="tabpage hidden"><div class="card"><h2>Respaldo y restauracion</h2><p>Use JSON para respaldo completo y CSV para abrir en Excel.</p><div class="grid g3"><button onclick="exportJSON()">Descargar JSON</button><button onclick="exportCSV()" class="secondary">Descargar CSV</button><label><input type="file" id="importFile" accept="application/json" onchange="importJSON(event)" class="hidden"><button onclick="document.getElementById('importFile').click()" type="button">Importar JSON</button></label></div><br><div class="warn">Privacidad: los datos se guardan localmente en este telefono. No se envian a servidores.</div></div></section>
   </section>
-  <div class="footer">Orientación educativa. No sustituye diagnóstico médico, nutricional o deportivo.</div>
+  <div class="footer">Orientacion educativa. No sustituye diagnostico medico, nutricional o deportivo.</div>
 </main>
 <script src="app.js"></script>
 </body></html>

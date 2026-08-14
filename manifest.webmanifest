@@ -1,6 +1,6 @@
 {
-  "name": "Mi Salud Metabólica",
-  "short_name": "Salud Metabólica",
+  "name": "Mi Salud Metabolica",
+  "short_name": "Salud Metabolica",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f8fafc",
